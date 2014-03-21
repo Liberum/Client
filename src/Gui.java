@@ -18,14 +18,15 @@ public class Gui {
 	static JCheckBox cb4 = new JCheckBox("Диск \"S\"");
 	static JCheckBox cb5 = new JCheckBox("Диск \"T\"");
 
-	static JLabel labelStatus = new JLabel("  Состояние:");
+	static JLabel labelStatus = new JLabel(
+			"  Состояние: Сервер отключен или недоступен");
 
 	public static void RunUi() {
 
-		final String dPach1 = "d:\\myCrypt";
-		final String dPach2 = "d:\\myCrypt";
-		final String dPach3 = "d:\\myCrypt";
-		final String dPach4 = "d:\\myCrypt";
+		final String dPach1 = "d:\\o";
+		final String dPach2 = "d:\\p";
+		final String dPach3 = "d:\\r";
+		final String dPach4 = "d:\\s";
 		final String dPach5 = "d:\\myCrypt";
 
 		final String dsk1 = "o";
@@ -33,6 +34,7 @@ public class Gui {
 		final String dsk3 = "r";
 		final String dsk4 = "s";
 		final String dsk5 = "t";
+		final String dska = "a";
 
 		JFrame jf = new JFrame("AutoCrypt");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,6 +113,7 @@ public class Gui {
 
 		Box box6 = Box.createHorizontalBox();
 		box6.add(jbxUnMounte);
+		box6.add(Box.createHorizontalGlue());
 		box6.add(labelStatus);
 
 		// добавление ячеек в одну вертикальную
@@ -150,10 +153,11 @@ public class Gui {
 		ma.UnMount(jbx3, dsk3);
 		ma.UnMount(jbx4, dsk4);
 		ma.UnMount(jbx5, dsk5);
+		ma.UnMount(jbxUnMounte, dska);
 		// --------------------------------------------------
 	}
 
-	public void setCb(int[] a) {
+	public void setCb(int[] a, String text) {
 		if (a[0] == 1) {
 			cb1.setBackground(Color.green); // меняем цвет фона
 			cb1.setSelected(true); // ставим галочку
@@ -193,6 +197,8 @@ public class Gui {
 			cb5.setBackground(Color.red);
 			cb5.setSelected(false);
 		}
+
+		labelStatus.setText("Состояние: " + text);
 	}
 
 }

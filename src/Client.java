@@ -10,8 +10,6 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class Client {
 
-	public static final int PORT = 4443;
-
 	public void SSLClient(final java.util.List<String> lstUnMount)
 			throws UnknownHostException, IOException {
 
@@ -20,7 +18,7 @@ public class Client {
 
 		System.setProperty("javax.net.ssl.trustStore", "C:/clientkeys");
 		SocketFactory factory = SSLSocketFactory.getDefault();
-		final Socket socket = factory.createSocket("127.0.0.1", PORT);
+		final Socket socket = factory.createSocket(Main.SERVER, Main.PORTSSL);
 		new Thread() {
 			public void run() {
 				try {
