@@ -1,36 +1,28 @@
-import java.io.File;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.net.UnknownHostException;
 
 public class Main {
 
-    /**
-     * @param args
-     * @throws InterruptedException
-     */
-    public static void main(String[] args) throws InterruptedException {
-	// TODO Auto-generated method stub
+	static final int MAX_THREADS = 40;
+	static final int INDICATION_PORT = 7894;
+	static final String SERVER = "127.0.0.1";
 
-	Gui.RunUi();
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws UnknownHostException
+	 */
+	public static void main(String[] args) throws InterruptedException,
+			UnknownHostException, IOException {
 
-	int[] a = new int[] { 2, 2, 2, 2, 2 };
-	int[] b = new int[] { 2, 2, 2, 2, 2 };
-	Gui.setCb(a);
+		Gui.RunUi();
 
-	while (true) {
-	    Gui.setCb(b);
-
-	    File[] arrayRoots = File.listRoots();
-	    for (File root : arrayRoots) {
-		if (root.getPath().equalsIgnoreCase("O:\\")) {
-		    System.out.println("O = 1");
-		    b[0] = 1;
+		// старт индикации, максимум 40 клиентов
+		if (Indication.threadCount() < MAX_THREADS) {
+			new Indication(SERVER);
 		}
 
-	    }
-	    TimeUnit.SECONDS.sleep(1);
-	    Gui.setCb(a);
-
 	}
-    }
 
 }
