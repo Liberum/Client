@@ -17,17 +17,18 @@ public class Gui {
 	static JCheckBox cb3 = new JCheckBox("Диск \"R\"");
 	static JCheckBox cb4 = new JCheckBox("Диск \"S\"");
 	static JCheckBox cb5 = new JCheckBox("Диск \"T\"");
+	static MountAdapter ma = new MountAdapter();
 
 	static JLabel labelStatus = new JLabel(
 			"  Состояние: Сервер отключен или недоступен");
 
 	public static void RunUi() {
 
-		final String dPach1 = "d:\\o";
-		final String dPach2 = "d:\\p";
-		final String dPach3 = "d:\\r";
-		final String dPach4 = "d:\\s";
-		final String dPach5 = "d:\\myCrypt";
+		final String dPach1 = "\\\\serv\\dsc\\al";
+		final String dPach2 = "\\\\serv\\dsc\\al";
+		final String dPach3 = "\\\\serv\\dsc\\al";
+		final String dPach4 = "\\\\serv\\dsc\\al";
+		final String dPach5 = "\\\\serv\\dsc\\al";
 
 		final String dsk1 = "o";
 		final String dsk2 = "p";
@@ -51,7 +52,7 @@ public class Gui {
 
 		cb1.setEnabled(false); // отключаем изменение
 
-		JButton jb1 = new JButton("Смонтировать");
+		final JButton jb1 = new JButton("Смонтировать");
 		JButton jbx1 = new JButton("X");
 		final JPasswordField jp1 = new JPasswordField(15);
 

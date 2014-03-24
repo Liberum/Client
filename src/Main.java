@@ -6,7 +6,7 @@ public class Main {
 
 	static final int INDICATION_PORT = 7894;
 	public static final int PORTSSL = 44443;
-	static final String SERVER = "127.0.0.1";
+	static final String SERVER = "192.168.1.100";
 
 	private static Logger log = Logger.getLogger(Main.class.getName());
 
