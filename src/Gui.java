@@ -56,6 +56,18 @@ public class Gui {
 		JButton jbx1 = new JButton("X");
 		final JPasswordField jp1 = new JPasswordField(15);
 
+		// ------------------------------------------------------------
+		// jp1.addKeyListener(new java.awt.event.KeyAdapter() {
+		// public void keyPressed(KeyEvent e) {
+		// if (e.getKeyCode() == 10) {
+		// System.out.println("222");
+		// jb1.doClick();
+		// }
+		// }
+		//
+		// });
+		// ------------------------------------------------------------
+
 		cb2.setEnabled(false);
 		JButton jb2 = new JButton("Смонтировать");
 		JButton jbx2 = new JButton("X");
